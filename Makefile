@@ -34,8 +34,16 @@ deploy-mainnet: check-api-key deploy
 deploy-rinkeby: export ETH_RPC_URL = $(call network,rinkeby)
 deploy-rinkeby: check-api-key deploy
 
+# goerli
+deploy-goerli: export ETH_RPC_URL = $(call network,goerli)
+deploy-goerli: check-api-key deploy
+
+# kovan
+deploy-kovan: export ETH_RPC_URL = $(call network,kovan)
+deploy-kovan: check-api-key deploy
+
 # verify on Etherscan
-verify:; ETH_RPC_URL=$(call network,$(network_name)) dapp verify-contract src/Greeter.sol:Greeter $(contract_address)
+verify:; ETH_RPC_URL=$(call network,$(network_name)) dapp verify-contract src/Santaswap.sol:Santaswap $(contract_address)
 
 check-api-key:
 ifndef ALCHEMY_API_KEY

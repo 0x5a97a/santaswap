@@ -7,8 +7,9 @@
     "const-name-snakecase": "off",
     "constructor-syntax": "error",
     "func-visibility": ["error", { "ignoreConstructors": true }],
-    "max-line-length": ["error", 120],
+    "max-line-length": ["warn", 120],
     "not-rely-on-time": "off",
+    "func-name-mixedcase": "off",
     "prettier/prettier": [
       "error",
       {

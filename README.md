@@ -1,102 +1,22 @@
-# <h1 align="center"> DappTools Template </h1>
+# <h1 align="center">🎅🏻 Santaswap 🎄</h1>
 
-**Template repository for getting started quickly with DappTools**
+![Github Actions](https://github.com/0x53616e746120436c617573/santaswap/workflows/Tests/badge.svg)
 
-![Github Actions](https://github.com/gakonst/dapptools-template/workflows/Tests/badge.svg)
+Experimental, unaudited, no roadmap, no fees, no Discord, no DAO, absolutely no promises, but I want to wish you a Merry Christmas.
 
-## Building and testing
+## How it works
 
-```sh
-git clone https://github.com/gakonst/dapptools-template
-cd dapptools-template
-make # This installs the project's dependencies.
-make test
-```
+Send an ERC721 token to Santaswap before Santa visits on Christmas Eve and your address will be added to Santa's nice list. 
+You may only send one token. You must use `safeTransferFrom` to be added to the nice list.
+You must provide a Merkle proof that the token is
+on Santa's Christmas tree in the `data` parameter of the transfer.
+Do not send ERC20 or ERC1155 tokens to Santaswap.
 
-## Deploying
+Santa will visit on Christmas Eve, set a magic number, and leave a message.
+He has already chosen his magic number.
+It's possible that Santa's chosen number would make everyone get their original gift back. If that's the case, Santa will increment his number by one.
+You should believe in Santa, but if you don't, you can verify that `keccak256(santasMessage)` is equal to `SANTAS_MESSAGE_HASH`.
 
-Contracts can be deployed via the `make deploy` command. Addresses are automatically
-written in a name-address json file stored under `out/addresses.json`.
-
-We recommend testing your deployments and provide an example under [`scripts/test-deploy.sh`](./scripts/test-deploy.sh)
-which will launch a local testnet, deploy the contracts, and do some sanity checks.
-
-Environment variables under the `.env` file are automatically loaded (see [`.env.example`](./.env.example)).
-Be careful of the [precedence in which env vars are read](https://github.com/dapphub/dapptools/tree/2cf441052489625f8635bc69eb4842f0124f08e4/src/dapp#precedence).
-
-We assume `ETH_FROM` is an address you own and is part of your keystore.
-If not, use `ethsign import` to import your private key.
-
-See the [`Makefile`](./Makefile#25) for more context on how this works under the hood
-
-We use Alchemy as a remote node provider for the Mainnet & Rinkeby network deployments.
-You must have set your API key as the `ALCHEMY_API_KEY` enviroment variable in order to
-deploy to these networks
-
-### Mainnet
-
-```
-ETH_FROM=0x3538b6eF447f244268BCb2A0E1796fEE7c45002D make deploy-mainnet
-```
-
-### Rinkeby
-
-```
-ETH_FROM=0x3538b6eF447f244268BCb2A0E1796fEE7c45002D make deploy-rinkeby
-```
-
-### Custom Network
-
-```
-ETH_RPC_URL=<your network> make deploy
-```
-
-### Local Testnet
-
-```
-# on one terminal
-dapp testnet
-# get the printed account address from the testnet, and set it as ETH_FROM. Then:
-make deploy
-```
-
-### Verifying on Etherscan
-
-After deploying your contract you can verify it on Etherscan using:
-
-```
-ETHERSCAN_API_KEY=<api-key> contract_address=<address> network_name=<mainnet|rinkeby|...> make verify
-```
-
-Check out the [dapp documentation](https://github.com/dapphub/dapptools/tree/master/src/dapp#dapp-verify-contract) to see how
-verifying contracts work with DappTools.
-
-## Installing the toolkit
-
-If you do not have DappTools already installed, you'll need to run the below
-commands
-
-### Install Nix
-
-```sh
-# User must be in sudoers
-curl -L https://nixos.org/nix/install | sh
-
-# Run this or login again to use Nix
-. "$HOME/.nix-profile/etc/profile.d/nix.sh"
-```
-
-### Install DappTools
-
-```sh
-curl https://dapp.tools/install | sh
-```
-
-## DappTools Resources
-
-* [DappTools](https://dapp.tools)
-    * [Hevm Docs](https://github.com/dapphub/dapptools/blob/master/src/hevm/README.md)
-    * [Dapp Docs](https://github.com/dapphub/dapptools/tree/master/src/dapp/README.md)
-    * [Seth Docs](https://github.com/dapphub/dapptools/tree/master/src/seth/README.md)
-* [DappTools Overview](https://www.youtube.com/watch?v=lPinWgaNceM)
-* [Awesome-DappTools](https://github.com/rajivpo/awesome-dapptools)
+If your address is on Santa's nice list, you may unwrap a gift on `CHRISTMAS_MORNING` after Santa has visited. 
+You will receive a random ERC721 token contributed by another Santaswapper, plus a special gift from Santa. 
+You may unwrap your gift only once.
