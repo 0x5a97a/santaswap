@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/santaswap/static/css/main.7ed263a1.css",
+    "main.js": "/santaswap/static/js/main.67430b2f.js",
+    "static/js/787.7ca43984.chunk.js": "/santaswap/static/js/787.7ca43984.chunk.js",
+    "index.html": "/santaswap/index.html",
+    "main.7ed263a1.css.map": "/santaswap/static/css/main.7ed263a1.css.map",
+    "main.67430b2f.js.map": "/santaswap/static/js/main.67430b2f.js.map",
+    "787.7ca43984.chunk.js.map": "/santaswap/static/js/787.7ca43984.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ed263a1.css",
+    "static/js/main.67430b2f.js"
+  ]
+}
